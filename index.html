@@ -98,24 +98,30 @@
       gap: 40px;
     }
 
+    .text-and-image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
     .text {
-      flex: 1.2;
+      flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: center; /* 텍스트 높이 기준 중앙 */
     }
 
     .image {
-      flex: 0.8;
+      flex: 1;
       display: flex;
-      align-items: stretch;
+      align-items: center; /* 이미지 높이 기준 중앙 */
       justify-content: center;
     }
 
     .image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
       border-radius: 8px;
     }
 
@@ -184,30 +190,45 @@
   </style>
 </head>
 <body>
+
+  <!-- 오른쪽 상단 6월호 표시 -->
   <div class="issue-top-right">6월호</div>
-  <a class="back-button" href="https://dlghkgus.github.io/main2/">&#8592;</a>
+
+  <!-- 바디 왼쪽 센터 뒤로가기 버튼 -->
+  <div class="back-button" onclick="history.back()">&#8592;</div>
+
   <div class="container">
     <h1 class="newspaper-title">편의점 진열대를 마주하면<br>종종 이런 생각이 든다.</h1>
+
     <div class="top-section">
-      <div class="text">
-        <p>“이 제품, 전에 봤던 거랑 비슷한데?”<br>
-        우유든, 삼각김밥이든, 컵라면이든 – 유독 닮은꼴 디자인이 많은 이 세계에는 나름의 ‘룰’이 존재한다.</p>
-        <p>가장 큰 이유는 소비자의 빠른 선택을 유도하기 위해서다. 편의점은 슈퍼마켓과 달리 좁은 공간, 짧은 시간 안에 제품을 선택해야 한다는 특수한 환경을 가지고 있다. 이런 상황에서 지나치게 독창적이거나 실험적인 디자인은 오히려 소비자의 혼란을 유발할 수 있다. 그래서 브랜드들은 일정한 ‘카테고리 룰’을 따르며, 직관적인 색감과 구성으로 제품의 속성을 드러낸다. 예를 들어, 고소한 맛은 노란색, 딸기는 분홍색, 시원한 맛은 파란색 등 색상은 제품의 맛과 특징을 은유적으로 표현한다.</p>
-        <p>또한 브랜드 간 경쟁이 치열한 상황에서 잘 팔리는 디자인은 빠르게 벤치마킹 대상이 된다. 한 제품이 히트를 치면 유사한 스타일의 디자인이 우후죽순처럼 등장한다. 그 결과, ‘안전한 디자인’이라는 이름 아래 비슷한 외형이 표준처럼 자리잡는다. 최근에는 편의점 PB (Private Brand, 자체 브랜드) 제품의 증가도 디자인 유사성에 한몫하고 있다. 각 편의점은 브랜드 통일성을 위해 비슷한 톤과 폰트, 일관된 패키지 스타일을 적용하고 있으며, 이는 전체적으로 브랜드 인지도를 높이는 전략이다.</p>
-        <p>결국, 편의점 패키지 디자인이 닮아가는 이유는 단순한 우연이 아니라, 전략적 선택이다. 소비자의 눈길을 사로잡기 위한 ‘익숙함’과 브랜드의 정체성을 유지하기 위한 ‘일관성’, 그리고 효율성을 고려한 ‘단순화’가 맞물린 결과다.</p>
-      </div>
-      <div class="image">
-        <img src="package.jpg" alt="편의점 패키지 디자인 이미지">
+      <div class="text-and-image">
+        <div class="text">
+          <p>“이 제품, 전에 봤던 거랑 비슷한데?”<br>
+          우유든, 삼각김밥이든, 컵라면이든 – 유독 닮은꼴 디자인이 많은 이 세계에는 나름의 ‘룰’이 존재한다.</p>
+
+          <p>가장 큰 이유는 소비자의 빠른 선택을 유도하기 위해서다. 편의점은 슈퍼마켓과 달리 좁은 공간, 짧은 시간 안에 제품을 선택해야 한다는 특수한 환경을 가지고 있다. 이런 상황에서 지나치게 독창적이거나 실험적인 디자인은 오히려 소비자의 혼란을 유발할 수 있다. 그래서 브랜드들은 일정한 ‘카테고리 룰’을 따르며, 직관적인 색감과 구성으로 제품의 속성을 드러낸다.</p>
+
+          <p>예를 들어, 고소한 맛은 노란색, 딸기는 분홍색, 시원한 맛은 파란색 등 색상은 제품의 맛과 특징을 은유적으로 표현한다.</p>
+
+          <p>또한 브랜드 간 경쟁이 치열한 상황에서 잘 팔리는 디자인은 빠르게 벤치마킹 대상이 된다. 한 제품이 히트를 치면 유사한 스타일의 디자인이 우후죽순처럼 등장한다. 그 결과, ‘안전한 디자인’이라는 이름 아래 비슷한 외형이 표준처럼 자리잡는다. 최근에는 편의점 PB (Private Brand, 자체 브랜드) 제품의 증가도 디자인 유사성에 한몫하고 있다. 각 편의점은 브랜드 통일성을 위해 비슷한 톤과 폰트, 일관된 패키지 스타일을 적용하고 있으며, 이는 전체적으로 브랜드 인지도를 높이는 전략이다.</p>
+
+          <p>결국, 편의점 패키지 디자인이 닮아가는 이유는 단순한 우연이 아니라, 전략적 선택이다. 소비자의 눈길을 사로잡기 위한 ‘익숙함’과 브랜드의 정체성을 유지하기 위한 ‘일관성’, 그리고 효율성을 고려한 ‘단순화’가 맞물린 결과다.</p>
+        </div>
+        <div class="image">
+          <img src="package.jpg" alt="편의점 패키지 디자인 이미지">
+        </div>
       </div>
     </div>
-    <div class="divider-line"></div>
+
+    <div class="divider-line"></div> 
+
     <div class="grid">
       <div class="card">
         <img src="cu.jpg" alt="CU 예시">
         <div class="card-title">CU</div>
         <p class="description">
           흰 배경 기반의 미니멀한 디자인이었으나 최근에 컨셉을 연보라로 변경하였다.
-          흰색/노란색 텍스트, 강조 컬러 절제 사용하였다. MZ세대 겨냥한 고급스럽고 트렌디한 스타일이다.
+          흰색/노란색 텍스트, 강조 컬러 절제 사용. MZ세대 겨냥한 고급스럽고 트렌디한 스타일.
         </p>
         <p class="source">▲ NICE TO CU</p>
       </div>
@@ -215,20 +236,10 @@
         <img src="gs25.jpg" alt="GS25 예시">
         <div class="card-title">GS25</div>
         <p class="description">
-          파스텔톤 색상, 곡선형 고딕체. SNS 공유를 고려한 구조이다. ‘갖고 싶게’ 만드는 디자인을 목표로 한다.
+          파스텔톤 색상, 곡선형 고딕체. SNS 공유를 고려한 구조. ‘갖고 싶게’ 만드는 디자인이 목표.
         </p>
         <p class="source">▲ GS HOLDINGS</p>
       </div>
       <div class="card">
         <img src="eleven.jpg" alt="세븐일레븐 예시">
-        <div class="card-title">세븐일레븐</div>
-        <p class="description">
-          전통 + 뉴트로 결합하고 붉은 포인트와 클래식 서체를 사용하였다. 안정적이며 신뢰감 주는 디자인이다.
-        </p>
-        <p class="source">▲ 아주경제</p>
-      </div>
-    </div>
-    <div class="divider-line"></div>
-  </div>
-</body>
-</html>
+        <div c
